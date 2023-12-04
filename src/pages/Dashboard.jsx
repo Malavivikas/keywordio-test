@@ -134,8 +134,12 @@ const Dashboard = () => {
                         <MenuItem value={"Revenue"}>Revenue</MenuItem>
                       </Select>
                     </FormControl>
-                    <Typography>
-                      <HelpOutlineIcon sx={{ color: "#ccc" }} />
+                    <Typography
+                      sx={{ xs: { display: "flex" }, sm: { display: "flex" } }}
+                    >
+                      <HelpOutlineIcon
+                        sx={{ color: "#ccc", xs: { marginRight: "auto" } }}
+                      />
                     </Typography>
                   </div>
                 </Paper>

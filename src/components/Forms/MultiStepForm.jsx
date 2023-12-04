@@ -11,6 +11,9 @@ import {
   Paper,
   Alert,
   Box,
+  Typography,
+  Card,
+  CardContent,
 } from "@mui/material";
 
 import CreateTextAd from "./CreateTextAd";
@@ -61,28 +64,34 @@ const MultiStepForm = () => {
     switch (activeStep) {
       case 0:
         return (
-          <>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={checkedOptions.includes("textAd")}
-                  onChange={() => handleCheckboxChange("textAd")}
-                  sx={{ marginLeft: { xs: 0, sm: 1 } }}
-                />
-              }
-              label="Create Text Ad"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={checkedOptions.includes("mediaAd")}
-                  onChange={() => handleCheckboxChange("mediaAd")}
-                  sx={{ marginLeft: { xs: 0, sm: 1 } }}
-                />
-              }
-              label="Create Media Ad"
-            />
-          </>
+          <Box
+            display="grid"
+            gridTemplateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+            gap={2}
+          >
+            {["textAd", "mediaAd"].map((adType) => (
+              <Card key={adType}>
+                <CardContent>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={checkedOptions.includes(adType)}
+                        onChange={() => handleCheckboxChange(adType)}
+                        sx={{ marginLeft: { xs: 0, sm: 1 } }}
+                      />
+                    }
+                    label={
+                      <Typography variant="body1">
+                        {adType === "textAd"
+                          ? "Create Text Ad"
+                          : "Create Media Ad"}
+                      </Typography>
+                    }
+                  />
+                </CardContent>
+              </Card>
+            ))}
+          </Box>
         );
       case 1:
         return checkedOptions.includes("textAd") ? (
