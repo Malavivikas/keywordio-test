@@ -67,6 +67,7 @@ const MultiStepForm = () => {
                 <Checkbox
                   checked={checkedOptions.includes("textAd")}
                   onChange={() => handleCheckboxChange("textAd")}
+                  sx={{ marginLeft: { xs: 0, sm: 1 } }}
                 />
               }
               label="Create Text Ad"
@@ -76,6 +77,7 @@ const MultiStepForm = () => {
                 <Checkbox
                   checked={checkedOptions.includes("mediaAd")}
                   onChange={() => handleCheckboxChange("mediaAd")}
+                  sx={{ marginLeft: { xs: 0, sm: 1 } }}
                 />
               }
               label="Create Media Ad"
@@ -101,7 +103,7 @@ const MultiStepForm = () => {
   };
 
   return (
-    <Container>
+    <Container maxWidth="md">
       <Stepper activeStep={activeStep}>
         {steps.map((label, index) => (
           <Step key={label}>
@@ -110,10 +112,22 @@ const MultiStepForm = () => {
         ))}
       </Stepper>
       <Box mt={3}>
-        <Paper elevation={3} style={{ padding: "20px" }}>
+        <Paper
+          elevation={3}
+          style={{
+            padding: "20px",
+            maxWidth: "600px",
+            margin: "auto",
+            position: "relative",
+          }}
+        >
           {renderStepContent()}
           <Box mt={3}>
-            <Button onClick={handleBack} disabled={activeStep === 0}>
+            <Button
+              onClick={handleBack}
+              disabled={activeStep === 0}
+              sx={{ width: "100%" }}
+            >
               Back
             </Button>
             <Button
@@ -121,6 +135,7 @@ const MultiStepForm = () => {
               color="primary"
               onClick={handleNext}
               disabled={isNextDisabled()}
+              sx={{ width: "100%" }}
             >
               {activeStep === steps.length ? "Finish" : "Next"}
             </Button>

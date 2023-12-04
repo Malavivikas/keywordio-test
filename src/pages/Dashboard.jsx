@@ -82,12 +82,12 @@ const Dashboard = () => {
     <>
       <Box sx={{ width: "100%" }}>
         <Grid container spacing={2}>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Item>
               <InsightsTable />
             </Item>
           </Grid>
-          <Grid item xs={6} mb={10}>
+          <Grid item xs={12} md={6}>
             <Item sx={{ position: "relative" }}>
               <Box>
                 <Paper
@@ -95,6 +95,7 @@ const Dashboard = () => {
                   sx={{
                     width: "100%",
                     display: "flex",
+                    flexDirection: "column",
                     justifyContent: "space-between",
                   }}
                 >
@@ -104,13 +105,14 @@ const Dashboard = () => {
                       fontWeight: "bold",
                       color: "#323C43",
                       textAlign: "left",
+                      mb: "1rem", // Add margin bottom
                     }}
                   >
                     Ad Insights
                   </Typography>
-                  <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ display: "flex", flexDirection: "column" }}>
                     <FormControl
-                      sx={{ minWidth: 100, mr: "1rem" }}
+                      sx={{ minWidth: "100%", mb: "1rem" }} // Adjust width and add margin bottom
                       size="small"
                     >
                       <InputLabel id="demo-select-small-label">
