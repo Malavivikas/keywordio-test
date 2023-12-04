@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/keywordio-test/static/css/main.9559ef67.css",
-    "main.js": "/keywordio-test/static/js/main.7ba9d27f.js",
+    "main.js": "/keywordio-test/static/js/main.1298c8eb.js",
     "index.html": "/keywordio-test/index.html",
     "main.9559ef67.css.map": "/keywordio-test/static/css/main.9559ef67.css.map",
-    "main.7ba9d27f.js.map": "/keywordio-test/static/js/main.7ba9d27f.js.map"
+    "main.1298c8eb.js.map": "/keywordio-test/static/js/main.1298c8eb.js.map"
   },
   "entrypoints": [
     "static/css/main.9559ef67.css",
-    "static/js/main.7ba9d27f.js"
+    "static/js/main.1298c8eb.js"
   ]
 }
