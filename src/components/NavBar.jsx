@@ -36,7 +36,6 @@ function Navbar() {
             variant="h6"
             noWrap
             component="a"
-            href="/"
             sx={{
               flexGrow: 4,
               mr: 2,
@@ -47,7 +46,9 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            APP LOGO
+            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+              APP LOGO
+            </Link>
           </Typography>
 
           <Box
@@ -86,15 +87,23 @@ function Navbar() {
             >
               <MenuItem>
                 <Typography textAlign="center" sx={{ color: "text.primary" }}>
-                  Dashboard
+                  <Link
+                    to="/dashboard"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    Dashboard
+                  </Link>
                 </Typography>
               </MenuItem>
               <MenuItem>
-                <Link to="/create">
-                  <Typography textAlign="center" sx={{ color: "text.primary" }}>
+                <Typography textAlign="center" sx={{ color: "text.primary" }}>
+                  <Link
+                    to="/create"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
                     Create Ad
-                  </Typography>
-                </Link>
+                  </Link>
+                </Typography>
               </MenuItem>
             </Menu>
           </Box>
@@ -113,7 +122,9 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+              APP LOGO
+            </Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
@@ -124,18 +135,21 @@ function Navbar() {
                 display: "block",
                 fontWeight: "bold",
               }}
+              component={Link}
+              to="/dashboard"
             >
               Dashboard
             </Button>
             <Button
               onClick={handleCloseNavMenu}
-              href="/create"
               sx={{
                 my: 2,
                 color: "#323c46",
                 display: "block",
                 fontWeight: "bold",
               }}
+              component={Link}
+              to="/create"
             >
               Create Ad
             </Button>

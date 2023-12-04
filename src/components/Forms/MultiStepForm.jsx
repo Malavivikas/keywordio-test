@@ -10,11 +10,9 @@ import {
   Snackbar,
   Paper,
   Alert,
-  // Typography,
   Box,
 } from "@mui/material";
 
-// Import your personal info and education info forms
 import CreateTextAd from "./CreateTextAd";
 import CreateMediaAd from "./CreateMediaAd";
 
@@ -40,7 +38,6 @@ const MultiStepForm = () => {
   };
 
   const handleNext = () => {
-    // setActiveStep((prevStep) => prevStep + 1);
     if (activeStep === steps.length - 1) {
       setSnackbarOpen(true);
       setActiveStep(0);
