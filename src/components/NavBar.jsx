@@ -35,7 +35,6 @@ function Navbar() {
           <Typography
             variant="h6"
             noWrap
-            component="a"
             sx={{
               flexGrow: 4,
               mr: 2,
@@ -110,7 +109,6 @@ function Navbar() {
           <Typography
             variant="h5"
             noWrap
-            component="a"
             href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
